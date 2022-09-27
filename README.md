@@ -35,4 +35,4 @@ Class QLearning:
             # some actions may have the same value, randomly choose on in these actions
             action = np.random.choice(stateAction[stateAction == np.max(stateAction)].index)
 ~~~
-**Every Methods, classed must provide annotation**:
+**Every Methods, classes must provide annotation**:
