@@ -3,10 +3,10 @@ class SHTC3(object): # Temp and humidity
     def __init__(self):
         self.temp = 0
         self.humi = 0  
-        sense=SenseHat()
+        self.sense=SenseHat()
     #read Tempreture
     def readTemp(self):
-        self.temp = sense.temp
+        self.temp = self.sense.temp
         print(self.temp)
         return self.temp
     

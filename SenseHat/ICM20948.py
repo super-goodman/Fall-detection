@@ -1,7 +1,4 @@
 
-from typing_extensions import Self
-
-
 class ICM20948(object): # Temp and humidity
     def __init__(self):
         self.x = 0 
