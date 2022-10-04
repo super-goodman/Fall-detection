@@ -6,6 +6,7 @@ if __name__ == "__main__":
 
     shtc3 = SHTC3()
     shtc3.readTemp()
+    shtc3.readHumi()
 
     lps22hb = LPS22HB()
     lps22hb.readPressure()

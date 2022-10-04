@@ -13,7 +13,7 @@ class SHTC3(object): # Temp and humidity
     
     #read humidity
     def readHumi(self):
-        print(123213)
+        
         self.humidity = self.sense.get_humidity()    
         print(self.humidity)
         return self.humi
