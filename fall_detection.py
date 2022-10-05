@@ -2,6 +2,7 @@ from ast import For, While
 from SenseHat.SHTC3 import SHTC3
 from SenseHat.LPS22HB import LPS22HB
 from SenseHat.ICM20948 import ICM20948
+from SenseHat.LEDMatrix import LEDMatrix
 
 if __name__ == "__main__":
 
@@ -13,5 +14,7 @@ if __name__ == "__main__":
     lps22hb.readPressure()
    
     icm20948 = ICM20948()
-    for i in range(100):
-        icm20948.readAccclerometer()
+   # for i in range(100):
+   #     icm20948.readAccclerometer()
+   
+    LEDMatrix.displayStr("Hello there!")
