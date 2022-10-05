@@ -15,7 +15,7 @@ class PiThread (threading.Thread):
       print ("Exiting " + self.name)
    
    
-   def print_time(threadName, delay, counter):
+   def print_time(self, threadName, delay, counter):
       while counter:
          if exitFlag:
             threadName.exit()
