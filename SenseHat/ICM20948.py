@@ -1,5 +1,5 @@
 from sense_hat import SenseHat
-class ICM20948(object): # Temp and humidity
+class ICM20948(object):
     def __init__(self):
         self.x = 0 
         self.y = 0 
