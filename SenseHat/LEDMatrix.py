@@ -3,7 +3,7 @@ class LEDMatrix(object):
     def __init__(self):
 
         self.sense = SenseHat()
-        self.sense.close()
+        self.sense.clear()
         
   
     def displayStr(self,str,x,y):
