@@ -20,7 +20,7 @@ class LEDThread (threading.Thread):
       lps22hb = LPS22HB()
       lps22hb.readPressure()
       
-      ledMatrix = LEDMatrix.LEDMatrix()
+      ledMatrix = LEDMatrix()
       displayContent = ""
       displayContent = "T: " + str(shtc3.readTemp()) + " H: " + str(shtc3.readHumi()) + " P: " + str(lps22hb.readPressure())
       ledMatrix.displayStr(displayContent)
