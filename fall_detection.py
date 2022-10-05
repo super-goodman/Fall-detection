@@ -40,8 +40,8 @@ if __name__ == "__main__":
       counter -= 1
 
     # Create new threads
-    thread1 = PiThread.run(1, "Thread-1", 1)
-    thread2 = PiThread.run(2, "Thread-2", 2)
+    thread1 = PiThread(1, "Thread-1", 1)
+    thread2 = PiThread(2, "Thread-2", 2)
 
     # Start new Threads
     thread1.start()
