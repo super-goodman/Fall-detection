@@ -3,7 +3,8 @@ from SenseHat.SHTC3 import SHTC3
 from SenseHat.LPS22HB import LPS22HB
 from SenseHat.ICM20948 import ICM20948
 from SenseHat.LEDMatrix import LEDMatrix
-from SenseHat.PiThread import PiThread
+from SenseHat.FallThread import FallThread
+from SenseHat.LEDThread import LEDThread
 
 
 if __name__ == "__main__":
@@ -15,13 +16,10 @@ if __name__ == "__main__":
     lps22hb = LPS22HB()
     lps22hb.readPressure()
    
-    icm20948 = ICM20948()
+  
    # for i in range(100):
    #     icm20948.readAccclerometer()
-    ledMatrix = LEDMatrix()
-    displayContent = ""
-    displayContent = "T: " + str(shtc3.readTemp()) + " H: " + str(shtc3.readHumi()) + " P: " + str(lps22hb.readPressure())
-    ledMatrix.displayStr(displayContent)
+    
     """
     try:
       while True:
