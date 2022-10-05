@@ -1,5 +1,5 @@
 import threading
-from ICM20948 import ICM20948
+from SenseHat.ICM20948 import ICM20948
 
 class FallThread (threading.Thread):
    def __init__(self, threadID, name):

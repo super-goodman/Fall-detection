@@ -1,7 +1,7 @@
 import threading
-from LEDMatrix import LEDMatrix
-from SHTC3 import SHTC3
-from LPS22HB import LPS22HB
+from SenseHat.LEDMatrix import LEDMatrix
+from SenseHat.SHTC3 import SHTC3
+from SenseHat.LPS22HB import LPS22HB
 
 
 class LEDThread (threading.Thread):
