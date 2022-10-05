@@ -4,7 +4,7 @@ from SenseHat.LPS22HB import LPS22HB
 from SenseHat.ICM20948 import ICM20948
 from SenseHat.LEDMatrix import LEDMatrix
 from SenseHat.PiThread import PiThread
-import time 
+
 
 if __name__ == "__main__":
 
@@ -30,14 +30,6 @@ if __name__ == "__main__":
       pass
     """
     
-    exitFlag = 0
-    def print_time(threadName, delay, counter):
-     while counter:
-      if exitFlag:
-         threadName.exit()
-      time.sleep(delay)
-      print ("%s: %s" % (threadName, time.ctime(time.time())))
-      counter -= 1
 
     # Create new threads
     thread1 = PiThread(1, "Thread-1", 1)
