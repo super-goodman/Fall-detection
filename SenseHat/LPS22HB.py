@@ -6,7 +6,7 @@ class LPS22HB(object):
         self.sense.clear()
     #read Pressure
     def readPressure(self):
-        self.pressure = self.sense.get_pressure()
+        self.pressure = round(self.sense.get_pressure(),1)
         print(self.pressure)
         return self.pressure
     
