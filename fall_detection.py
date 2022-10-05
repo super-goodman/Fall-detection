@@ -16,5 +16,5 @@ if __name__ == "__main__":
     icm20948 = ICM20948()
    # for i in range(100):
    #     icm20948.readAccclerometer()
-   
-    LEDMatrix.displayStr("Hello there!", 0, 0,0)
+    ledMatrix = LEDMatrix()
+    ledMatrix.displayStr("Hello there!")
