@@ -18,5 +18,5 @@ if __name__ == "__main__":
    #     icm20948.readAccclerometer()
     ledMatrix = LEDMatrix()
     displayContent = ""
-    displayContent = "T: " + str(shtc3.readTemp()) + " H: " + str(shtc3.readHumi()) + " P: " + str(lps22hb.LPS22HB())
+    displayContent = "T: " + str(shtc3.readTemp()) + " H: " + str(shtc3.readHumi()) + " P: " + str(lps22hb.readPressure())
     ledMatrix.displayStr(displayContent)
