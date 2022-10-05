@@ -20,3 +20,8 @@ if __name__ == "__main__":
     displayContent = ""
     displayContent = "T: " + str(shtc3.readTemp()) + " H: " + str(shtc3.readHumi()) + " P: " + str(lps22hb.readPressure())
     ledMatrix.displayStr(displayContent)
+    try:
+      while True:
+       do_something()
+    except KeyboardInterrupt:
+      pass
