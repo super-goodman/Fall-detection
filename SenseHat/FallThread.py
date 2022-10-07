@@ -17,14 +17,14 @@ class FallThread (threading.Thread):
          x,y,z = ICM20948.readAccclerometer()
          arr[i] = str(x)+','+str(y)+','+str(z)+','
          sleep(0.005)
-      print ("Exiting " + self.name)
+      print ("Exiting " + self.name + arr[150])
       
-      f = open("testData.txt", "x")
-      f.close()
-      f = open("testData.txt", "a")
+      f1 = open("testData.txt", "x")
+      f1.close()
+      f2 = open("testData.txt", "a")
       for j in range (2400):
-          f.write(arr[j])
-      f.close()
+          f2.write(arr[j])
+      f2.close()
 
       #return arr
    
