@@ -18,7 +18,7 @@ class FallThread (threading.Thread):
          x,y,z = acc.readAccclerometer()
          arr[i] = x + "," + y + "," + z + ","
          sleep(0.005)
-      print ("Exiting " + self.name + arr[15])
+      print ("Exiting " + self.name)
       
       f1 = open("testData.txt", "x")
       f1.close()
