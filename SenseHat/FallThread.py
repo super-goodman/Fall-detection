@@ -14,7 +14,8 @@ class FallThread (threading.Thread):
      
       arr = numpy.empty(2400, dtype = str)
       for i in range (2400):
-         x,y,z = ICM20948.readAccclerometer()
+         acc = ICM20948()
+         x,y,z = acc.readAccclerometer()
          arr[i] = str(x)+','+str(y)+','+str(z)+','
          sleep(0.005)
       print ("Exiting " + self.name + arr[150])
