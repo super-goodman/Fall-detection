@@ -18,7 +18,7 @@ class ICM20948(object):
         self.x = round(self.x, 3)
         self.y = round(self.y, 3)
         self.z = round(self.z, 3)
-        print("x={0}, y={1}, z={2}".format(self.x,self.y,self.z))
+       # print("x={0}, y={1}, z={2}".format(self.x,self.y,self.z))
         return self.x,self.y,self.z
     
 
