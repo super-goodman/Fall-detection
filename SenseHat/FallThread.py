@@ -16,7 +16,7 @@ class FallThread (threading.Thread):
       for i in range (24):
          acc = ICM20948()
          x,y,z = acc.readAccclerometer()
-         arr[i] = str(x)+','+str(y)+','+str(z)+','
+         arr[i] = x + "," + y + "," + z + ","
          sleep(0.005)
       print ("Exiting " + self.name + arr[15])
       
