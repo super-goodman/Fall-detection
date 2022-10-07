@@ -20,7 +20,7 @@ class FallThread (threading.Thread):
          sleep(0.005)
       print ("Exiting " + self.name)
       
-      numpy.savetxt('textData.txt',arr,fmt='%d')
+      numpy.savetxt('textData.txt',arr,fmt='%s')
 
       #return arr
    
