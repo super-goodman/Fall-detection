@@ -12,7 +12,7 @@ class FallThread (threading.Thread):
    def run(self):
       print ("Starting " + self.name)
      
-      arr = numpy.empty(2400, dtype = str)
+      arr = numpy.empty(2400, dtype = "S20")
       for i in range (24):
          acc = ICM20948()
          x,y,z = acc.readAccclerometer()
