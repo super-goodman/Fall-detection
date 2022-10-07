@@ -36,6 +36,6 @@ if __name__ == "__main__":
     # Start new Threads
     thread1.start()
     thread2.start()
-    thread1.join()
-    thread2.join()
+  # thread1.join()
+  # thread2.join()
     print ("Exiting Main Thread")
