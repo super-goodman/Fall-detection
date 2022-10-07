@@ -20,12 +20,7 @@ class FallThread (threading.Thread):
          sleep(0.005)
       print ("Exiting " + self.name)
       
-      f1 = open("testData.txt", "x")
-      f1.close()
-      f2 = open("testData.txt", "a")
-      for j in range (24):
-          f2.write(arr[j])
-      f2.close()
+      numpy.savetxt('textData.txt',arr,fmt='%d')
 
       #return arr
    
