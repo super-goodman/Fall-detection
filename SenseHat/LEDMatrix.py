@@ -1,18 +1,13 @@
-
-class LEDMatrix(object): # Temp and humidity
+from sense_hat import SenseHat
+class LEDMatrix(object): 
     def __init__(self):
-        self.pressure = 0 
-        
-    #read Tempreture
-    def displayStr(self,x,y):
-        #self.temp = sensehat.readTemp()
-        print("displayStr")
-        
-        #read Tempreture
-    def displayNum(self,x,y):
-        #self.temp = sensehat.readTemp()
-        print("displayNum")
 
-    def displayRuning(self,x,y):
-        #self.temp = sensehat.readTemp()
-        print("displayRuning")
+        self.sense = SenseHat()
+        self.sense.clear()
+        
+  
+    def displayStr(self,str):
+        self.sense.show_message(str, text_colour=[185, 139, 231])
+  
+
+        
