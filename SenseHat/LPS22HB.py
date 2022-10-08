@@ -1,12 +1,13 @@
-
-class LPS22HB(object): # Temp and humidity
+from sense_hat import SenseHat
+class LPS22HB(object):
     def __init__(self):
         self.pressure = 0 
-        
-    #read Tempreture
+        self.sense = SenseHat()
+        self.sense.clear()
+    #read Pressure
     def readPressure(self):
-        #self.temp = sensehat.readTemp()
-        print("readPressure")
+        self.pressure = round(self.sense.get_pressure(),1)
+        print(self.pressure)
         return self.pressure
     
 

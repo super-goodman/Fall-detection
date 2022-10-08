@@ -37,5 +37,5 @@ Class QLearning:
 ~~~
 **Every Methods, classes must provide annotation**:
 ~~~python
-123
+1234
 ~~~
