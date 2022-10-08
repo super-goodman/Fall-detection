@@ -26,8 +26,11 @@ class FallThread (threading.Thread):
       
       f = open("testData.txt","w")
       for j in range (96):
-         f.write(str(arr[j]))
-         if j < 96:
+         toWrite = str(arr[j])
+         toWrite = toWrite.replace('[','')
+         toWrite = toWrite.replace(']','')
+         f.write(toWrite)
+         if j < 95:
             
             f.write(',\n')
       
