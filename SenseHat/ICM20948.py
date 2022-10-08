@@ -15,14 +15,9 @@ class ICM20948(object):
         self.x = self.acc["x"]
         self.y = self.acc["y"]
         self.z = self.acc["z"]
-        xa = round(self.x, 3)
-        ya = round(self.y, 3)
-        za = round(self.z, 3)
-        xb = "x=" + str(xa)
-        yb = "y=" + str(ya)
-        zb = "z=" + str(za)
+        
        # print("x={0}, y={1}, z={2}".format(self.x,self.y,self.z))
-        return xb, yb, zb
+        return str(self.x), str(self.y), str(self.z)
     
 
 
