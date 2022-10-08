@@ -14,23 +14,23 @@ class FallThread (threading.Thread):
       print ("Starting " + self.name)
       contG = 9.80665
       arr = []
-      for i in range (96):
+      for i in range (799):
          acc = ICM20948()
          x,y,z = acc.readAccclerometer()
          ax = ((2*16) / (2**13)) * x * contG
          ay = ((2*16) / (2**13)) * y * contG
          az = ((2*16) / (2**13)) * z * contG
          arr.append([ax, ay, az]) 
-         sleep(0.005)
+         #sleep(0.005)
       print ("Exiting " + self.name)
       
       f = open("testData.txt","w")
-      for j in range (96):
+      for j in range (799):
          toWrite = str(arr[j])
          toWrite = toWrite.replace('[','')
          toWrite = toWrite.replace(']','')
          f.write(toWrite)
-         if j < 95:
+         if j < 799:
             
             f.write(',\n')
       
