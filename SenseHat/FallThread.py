@@ -20,7 +20,7 @@ class FallThread (threading.Thread):
          ax = ((2*16) / (2**13)) * x * contG
          ay = ((2*16) / (2**13)) * y * contG
          az = ((2*16) / (2**13)) * z * contG
-         arr[i].append([ax, ay, az]) 
+         arr.append([ax, ay, az]) 
          sleep(0.005)
       print ("Exiting " + self.name)
       
