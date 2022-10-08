@@ -8,26 +8,6 @@ from SenseHat.LEDThread import LEDThread
 
 
 if __name__ == "__main__":
-    '''
-    shtc3 = SHTC3()
-    shtc3.readTemp()
-    shtc3.readHumi()
-
-    lps22hb = LPS22HB()
-    lps22hb.readPressure()
-    '''
-  
-   # for i in range(100):
-   #     icm20948.readAccclerometer()
-    
-    """
-    try:
-      while True:
-       do_something()
-    except KeyboardInterrupt:
-      pass
-    """
-    
 
     # Create new threads
     thread1 = FallThread(1, "Thread-1")

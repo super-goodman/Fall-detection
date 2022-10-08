@@ -1,6 +1,5 @@
 import threading
 from SenseHat.ICM20948 import ICM20948
-import numpy 
 from time import sleep
 import io
 
@@ -21,7 +20,7 @@ class FallThread (threading.Thread):
          ay = ((2*16) / (2**13)) * y * contG
          az = ((2*16) / (2**13)) * z * contG
          arr.append([ax, ay, az]) 
-         #sleep(0.005)
+         sleep(0.005)
       print ("Exiting " + self.name)
       
       f = open("testData.txt","w")
@@ -34,7 +33,8 @@ class FallThread (threading.Thread):
             
             f.write(',\n')
       
-      
+      f.close()
+      print ("writing finished!")
       
      # numpy.savetxt('textData.txt',arr,fmt='%s')
 
