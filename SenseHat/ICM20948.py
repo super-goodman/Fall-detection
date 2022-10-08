@@ -17,7 +17,7 @@ class ICM20948(object):
         self.z = self.acc["z"]
         
        # print("x={0}, y={1}, z={2}".format(self.x,self.y,self.z))
-        return str(self.x), str(self.y), str(self.z)
+        return self.x, self.y, self.z
     
 
 
