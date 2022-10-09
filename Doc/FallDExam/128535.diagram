@@ -1,0 +1,35 @@
+format 224
+
+pseudostatecanvas 128023 pseudostate_ref 128279 // initial 
+   xyz 166 106 2000
+end
+statecanvas 128151 state_ref 129047 // Idle
+  
+  xyzwh 82.8 191.6 2000 205 85
+end
+statecanvas 128279 state_ref 129175 // Update web
+  
+  xyzwh 471.2 202.2 2000 151 69
+end
+transitioncanvas 128407 transition_ref 130839 // <transition>
+  decenter_end 467
+  
+  from ref 128023 z 2001 to ref 128151
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 128791 transition_ref 130967 // update Data
+  decenter_begin 317
+  decenter_end 259
+  
+  from ref 128151 z 2001 label "data updated / update web" xyz 301.5 196.5 3000 to ref 128279
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 129175 transition_ref 131095 // finish update
+  decenter_begin 723
+  decenter_end 704
+  
+  from ref 128279 z 2001 label "Finish update
+ / Wait for data" xyz 335 255.5 3000 to ref 128151
+  write_horizontally default show_definition default drawing_language default
+end
+end
