@@ -8,7 +8,8 @@ import sys, getopt
 import signal
 import time
 from Email import Emailer
-
+from sqlite3 import Cursor
+import pymysql
 from edge_impulse_linux.runner import ImpulseRunner
 
 
@@ -68,39 +69,44 @@ def classify():
 
 
 class FallThread (threading.Thread):
-   def __init__(self, threadID, name):
-      threading.Thread.__init__(self)
-      self.acc = ICM20948()
-   def run(self):
-      contG = 9.80665
-      arr = []
-      self.start = time.time()
-      for i in range (800):
-         x,y,z = self.acc.readAccclerometer()
-         ax = ((2*16) / (2**13)) * x * contG
-         ay = ((2*16) / (2**13)) * y * contG
-         az = ((2*16) / (2**13)) * z * contG
-         arr.append([ax, ay, az]) 
-      print(time.time()-self.start)
-      f = open("data.txt","w")
-      for j in range (800):
-         toWrite = str(arr[j])
-         toWrite = toWrite.replace('[','')
-         toWrite = toWrite.replace(']','')
-         f.write(toWrite)
-         if j < 800:
-            
-            f.write(',\n')
-      
-      f.close()
-      print ("writing finished!")
-      #classify 
-      result = classify()
-      #Send mail if the result is fall
-      if result == 1:
-          sender=Emailer()
-          sender.sendmail(sendTo, emailSubject, emailContent)  
-
-      
-   
-  
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.acc = ICM20948()
+        self.sender=Emailer()
+        # Please use your own server
+        self.db = pymysql.connect(host='117.50.162.94',user='***',password='***',database='bot')
+        self.cursor = self.db.cursor()
+    def run(self):
+        while 1:
+            contG = 9.80665
+            arr = []
+            self.start = time.time()
+            for i in range (800):
+                x,y,z = self.acc.readAccclerometer()
+                ax = ((2*16) / (2**13)) * x * contG
+                ay = ((2*16) / (2**13)) * y * contG
+                az = ((2*16) / (2**13)) * z * contG
+                arr.append([ax, ay, az]) 
+            print(time.time()-self.start)
+            f = open("data.txt","w")
+            for j in range (800):
+                toWrite = str(arr[j])
+                toWrite = toWrite.replace('[','')
+                toWrite = toWrite.replace(']','')
+                f.write(toWrite)
+                if j < 800:  
+                    f.write(',\n')
+            f.close()
+            print ("writing finished!")
+            #classify 
+            result = classify()
+            #Send mail if the result is fall
+            if result == 1:
+                self.sender.sendmail(sendTo, emailSubject, emailContent)  
+                sql = "INSERT INTO `Record` (`Content`,`Time`) VALUES (\"fall\",{0})".format(time.time())
+                self.cursor.execute(sql)
+                result = self.cursor.fetchall()
+                print(result)
+     
+        
+        
