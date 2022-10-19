@@ -36,6 +36,5 @@ Class QLearning:
             action = np.random.choice(stateAction[stateAction == np.max(stateAction)].index)
 ~~~
 **Every Methods, classes must provide annotation**:
-~~~python
-1234
-~~~
+
+
