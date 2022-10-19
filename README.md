@@ -37,4 +37,6 @@ Class QLearning:
 ~~~
 **Every Methods, classes must provide annotation**:
 
+Please download this dependency for Linux/Raspberry pi/mac to use machine learning module:
 
+https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/edge-impulse-for-linux
