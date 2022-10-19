@@ -103,7 +103,7 @@ class FallThread (threading.Thread):
             #Send mail if the result is fall
             if result == 1:
                 self.sender.sendmail(sendTo, emailSubject, emailContent)  
-                sql = "INSERT INTO `Record` (`Content`,`Time`) VALUES (\"fall\",{0})".format(time.time())
+                sql = "INSERT INTO `Record` (`Content`,`Time`) VALUES (\"Fall\",{0})".format(time.time())
                 self.cursor.execute(sql)
                 result = self.cursor.fetchall()
                 print(result)
