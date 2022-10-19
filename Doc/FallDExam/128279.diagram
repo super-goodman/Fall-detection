@@ -1,0 +1,36 @@
+format 224
+
+pseudostatecanvas 128023 pseudostate_ref 128023 // initial 
+   xyz 75 173 2000
+end
+statecanvas 128151 state_ref 128151 // OFF
+  
+  xyzwh 152 153 2000 101 69
+end
+statecanvas 128279 state_ref 128279 // IDLE
+  
+  xyzwh 495 292 2000 275 117
+end
+transitioncanvas 129175 transition_ref 128279 // <transition>
+  decenter_begin 323
+  
+  from ref 128279 z 2001 label "power turn off / perform shutdown
+
+" xyz 370 184 3000 to point 250 167
+  line 130199 z 2001 to ref 128151
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 130071 transition_ref 128407 // <transition>
+  
+  from ref 128151 z 2001 label "power turn on
+ / perform startup
+
+" xyz 275 252 3000 to ref 128279
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 130327 transition_ref 128535 // <transition>
+  
+  from ref 128023 z 2001 to ref 128151
+  write_horizontally default show_definition default drawing_language default
+end
+end

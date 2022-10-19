@@ -11,7 +11,7 @@ class SHTC3(object): # Temp and humidity
         self.temp = self.sense.get_temperature()
         self.temp2 = self.sense.get_temperature_from_pressure()
         print(self.temp)
-        return round(2 / (self.temp + self.temp2),1)
+        return round((self.temp + self.temp2)/2,1)
     
     #read humidity
     def readHumi(self):

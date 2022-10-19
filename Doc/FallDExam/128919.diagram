@@ -1,0 +1,78 @@
+format 224
+
+classcanvas 128023 class_ref 129815 // User
+  simpleclassdiagramsettings end
+  xyz 113 109 2000
+end
+classcanvas 128279 class_ref 129559 // Server
+  simpleclassdiagramsettings end
+  xyz 554 325 2000
+end
+classcanvas 128919 class_ref 129943 // Raspi
+  simpleclassdiagramsettings end
+  xyz 559 111 2005
+end
+classcanvas 129815 class_ref 129815 // User
+  simpleclassdiagramsettings end
+  xyz 558.5 249.5 2000
+end
+usecasecanvas 131095 usecase_ref 128407 // Generate waling data
+  xyzwh 319 70 3005 64 32 label_xy 290 102
+end
+usecasecanvas 131223 usecase_ref 128535 // Display env status
+  xyzwh 318 258 3005 64 32 label_xy 297 290
+end
+usecasecanvas 131351 usecase_ref 128663 // send data
+  xyzwh 320 340 3005 64 32 label_xy 323 371
+end
+usecasecanvas 132375 usecase_ref 128791 // wear
+  xyzwh 318 128 3005 64 32 label_xy 336 160
+end
+classcanvas 133271 class_ref 129943 // Raspi
+  simpleclassdiagramsettings end
+  xyz 116 247 2005
+end
+classcanvas 133399 class_ref 129687 // Emergency
+  simpleclassdiagramsettings end
+  xyz 539 180 2000
+end
+usecasecanvas 133527 usecase_ref 128919 // Alert
+  xyzwh 320 192 3005 64 32 label_xy 338 224
+end
+classcanvas 134295 class_ref 130071 // Technition
+  simpleclassdiagramsettings end
+  xyz 103 404 2000
+end
+usecasecanvas 134423 usecase_ref 129047 // check data
+  xyzwh 319 421 3005 64 32 label_xy 319 453
+end
+subject 134935 ""
+  xyzwh 210 47 2000 290 477
+textcanvas 135063 "Fall Detection
+"
+  xyzwh 213 55 3011 80 32
+line 131735 ----
+  from ref 131223 z 3006 to ref 129815
+line 131991 ----
+  from ref 131351 z 3006 to ref 128279
+line 132119 ----
+  from ref 128023 z 3006 to ref 131095
+line 132247 ----
+  from ref 131095 z 3006 to ref 128919
+line 133015 ----
+  from ref 132375 z 3006 to ref 128023
+line 133143 ----
+  from ref 128919 z 3006 to ref 132375
+line 133655 ----
+  from ref 133271 z 3006 to ref 133527
+line 133783 ----
+  from ref 133399 z 3006 to ref 133527
+line 133911 ----
+  from ref 131223 z 3006 to ref 133271
+line 134039 ----
+  from ref 131351 z 3006 to ref 133271
+line 134679 ----
+  from ref 134423 z 3006 to ref 128279
+line 134807 ----
+  from ref 134423 z 3006 to ref 134295
+end

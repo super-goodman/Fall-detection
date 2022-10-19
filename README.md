@@ -36,6 +36,7 @@ Class QLearning:
             action = np.random.choice(stateAction[stateAction == np.max(stateAction)].index)
 ~~~
 **Every Methods, classes must provide annotation**:
-~~~python
-1234
-~~~
+
+Please download this dependency for Linux/Raspberry pi/mac to use machine learning module:
+
+https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/edge-impulse-for-linux

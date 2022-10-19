@@ -1,0 +1,75 @@
+format 224
+
+pseudostatecanvas 128023 pseudostate_ref 128151 // initial 
+   xyz 152 46 2000
+end
+statecanvas 128151 state_ref 128407 // Read sensor datas
+  
+  xyzwh 97 154 2000 139 85
+end
+statecanvas 128279 state_ref 128535 // Display Env
+  
+  xyzwh 89 298 2000 171 101
+end
+statecanvas 133911 state_ref 128663 // Analysis
+  
+  xyzwh 310 149 2000 149 101
+end
+statecanvas 134167 state_ref 128791 // Send DataBase
+  
+  xyzwh 587 304 2000 165 85
+end
+statecanvas 134295 state_ref 128919 // Alert
+  
+  xyzwh 580 161 2000 181 85
+end
+transitioncanvas 128407 transition_ref 128663 // <transition>
+  
+  from ref 128023 z 2001 to ref 128151
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 128535 transition_ref 128791 // display
+  decenter_begin 647
+  decenter_end 578
+  
+  from ref 128151 z 2001 label "display" xyz 192 259 3000 to ref 128279
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 130967 transition_ref 129175 // displayFinish
+  decenter_begin 280
+  decenter_end 280
+  
+  from ref 128279 z 2001 label "displayFinish" xyz 51 261 3000 to ref 128151
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 134039 transition_ref 129559 // data received
+  
+  from ref 128151 z 2001 label "data received" xyz 236 197 3000 to ref 133911
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 134423 transition_ref 129687 // Detect fall
+  
+  from ref 133911 z 2001 label "Detect fall" xyz 488 183 3000 to ref 134295
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 135703 transition_ref 130071 // Alert finish
+  decenter_end 683
+  
+  from ref 134295 z 2001 label "Alert finish" xyz 398 92 3000 to point 667 109
+  line 135831 z 2001 to point 188 105
+  line 135959 z 2001 to ref 128151
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 136343 transition_ref 130327 // record data
+  
+  from ref 134295 z 2001 label "record data" xyz 592 269 3000 to ref 134167
+  write_horizontally default show_definition default drawing_language default
+end
+transitioncanvas 137879 transition_ref 130711 // receive finish
+  decenter_begin 277
+  decenter_end 270
+  
+  from ref 133911 z 2001 label "receive finish" xyz 235 159 3000 to ref 128151
+  write_horizontally default show_definition default drawing_language default
+end
+end

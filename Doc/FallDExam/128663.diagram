@@ -1,0 +1,92 @@
+format 224
+
+classinstancecanvas 128023 classinstance_ref 128023 // 
+  xyz 128.972 47.8243 2005 life_line_z 2000
+end
+classinstancecanvas 128279 classinstance_ref 128151 // 
+  xyz 322.382 48.9808 2005 life_line_z 2000
+end
+classinstancecanvas 128407 classinstance_ref 128279 // 
+  xyz 630.823 52.2643 2005 life_line_z 2000
+end
+classinstancecanvas 129047 classinstance_ref 128407 // 
+  xyz 479.48 50 2000 life_line_z 2000
+end
+fragment 131223 "opt"
+  xyzwh 70.2 149.64 2000 702 300
+  separator 5000
+end
+textcanvas 131351 "[User fall]"
+  xyzwh 155.52 153.96 2006 54 15
+textcanvas 131479 "[else]"
+  xyzwh 157.2 305.68 2005 30 15
+fragment 132503 "sd Falldetection"
+  xyzwh 14 31 2000 812 437
+end
+durationcanvas 128535 classinstance_ref 128023 // :User
+  xyzwh 147 97.48 2010 11 41
+end
+durationcanvas 128663 classinstance_ref 128279 // :Rspi
+  xyzwh 341 97.4 2010 11 35
+end
+durationcanvas 129687 classinstance_ref 128279 // :Rspi
+  xyzwh 341 247.2 2010 11 48
+end
+durationcanvas 129815 classinstance_ref 128407 // :Server
+  xyzwh 651 247.48 2010 11 44
+end
+durationcanvas 131607 classinstance_ref 128279 // :Rspi
+  xyzwh 341 169.4 2010 11 42
+end
+durationcanvas 131735 classinstance_ref 129047 // :Emergency
+  xyzwh 513 168.96 2010 11 36
+end
+durationcanvas 132119 classinstance_ref 128279 // :Rspi
+  xyzwh 341 333.76 2010 11 66
+end
+durationcanvas 132247 classinstance_ref 128023 // :User
+  xyzwh 147 339.2 2010 11 63
+end
+msg 128791 synchronous
+  from durationcanvas_ref 128535
+  to durationcanvas_ref 128663
+  yz 97 2015 explicitmsg "walk"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 254 83
+msg 128919 return
+  from durationcanvas_ref 128663
+  to durationcanvas_ref 128535
+  yz 120 2015 explicitmsg "Display env status"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 215 107
+msg 129943 synchronous
+  from durationcanvas_ref 129687
+  to durationcanvas_ref 129815
+  yz 246 2015 explicitmsg "upload fall data"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 417 236
+msg 130071 return
+  from durationcanvas_ref 129815
+  to durationcanvas_ref 129687
+  yz 278 2015 explicitmsg "receive success"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 420 266
+msg 131863 synchronous
+  from durationcanvas_ref 131607
+  to durationcanvas_ref 131735
+  yz 169 2015 explicitmsg "Alert"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 420 155
+msg 131991 return
+  from durationcanvas_ref 131735
+  to durationcanvas_ref 131607
+  yz 194 2015 explicitmsg "receive"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 413 183
+msg 132375 synchronous
+  from durationcanvas_ref 132119
+  to durationcanvas_ref 132247
+  yz 368 2015 explicitmsg "Activity normal"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 203 354
+end
