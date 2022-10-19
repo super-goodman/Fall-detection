@@ -9,7 +9,7 @@ local Varable: temp,tempCurrent
 Global variable: TEMP
 Class: TempController, People
 Method: tempDisplay(*)
-Every simble comes with a blank: 1 + 1 = 2, not 1+1=2 
+Every symble comes with a blank: 1 + 1 = 2, not 1+1=2 
 
 ~~~
 
@@ -40,3 +40,8 @@ Class QLearning:
 Please download this dependency for Linux/Raspberry pi/mac to use machine learning module:
 
 https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/edge-impulse-for-linux
+
+~~~
+sudo pip3 install sqlite3
+sudo pip3 install pymysql
+~~~
